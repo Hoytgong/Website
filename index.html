@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width", initial-scale=1.0>
+
+  <title>Hoyt Gong</title>
+
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="css/main.css" rel="stylesheet">
+  
+  <link rel="shortcut icon" type="image/png" href="Images/favicon.png">
+</head>
+
+<body>
+
+	<!--NAVIGATION BAR-->
+	<div class='navbar-container'>
+      <div class='menu'>
+        <div class='logo'><a href='index.html'>Hoyt Gong</a></div>
+        <div class='links'>
+          <div class='work'><a href='index.html'>Work</a></div>
+          <div class='projects'><a href='projects.html'>Projects</a></div>
+          <div class='about'><a href='about.html'>About</a></div>
+        </div>
+      </div>
+    </div>
+<div id="particles-js"></div>
+    <!--TITLE SCREEN-->
+    <div class='container'>
+      
+
+      <h2>Hi there, I'm Hoyt.</h2>
+      <h5>I take pictures, create projects, and think about ideas.</h5> 
+
+      <p>Currently a Penn undergrad, I'm most interested in global health policy and applying analytics to epidemiology.<br>
+        Outside of academics, I consider myself a<span id="retype">  minimalist.</span></p>
+
+      <div class='scroll'><a href="#masonry"><span></span></a></div>
+
+    </div>
+
+    <!--PHOTOGRAPHY-->
+    <div id="masonry">
+      <img src="Images/photos/central_park.jpg" alt="" />
+      <img src="Images/photos/maine_sunset.jpg" alt="" />
+      <img src="Images/photos/bangkok_assc.jpg" alt="" />
+      <img src="Images/photos/db_1.jpg" alt="" />
+      <img src="Images/photos/dan_linvilla.jpg" alt="" />
+      <img src="Images/photos/ot_formal.jpg" alt="" />
+      <img src="Images/photos/rowing.jpg" alt="" />
+      <img src="Images/photos/fashion_dist.jpg" alt="" />
+      <img src="Images/photos/db_2.jpg" alt="" />
+      <img src="Images/photos/fishtown.jpg" alt="" />
+      <img src="Images/photos/chelsea.jpg" alt="" />
+
+    </div>
+
+    <!--FOOTER ICONS-->
+    <footer id=footer>
+    	 <div class="social-icons social-icons-white">
+          
+          <a href="https://www.facebook.com/hoyt.gong" target="_blank"><img src="https://seedlogix.com/hubs/themes/clients/images/facebook-white.svg">Facebook</a>
+          <a href="https://www.linkedin.com/in/hoytgong/" target="_blank"><img src="https://seedlogix.com/hubs/themes/clients/images/linkedin-white.svg">LinkedIn</a>
+          <a href="mailto:hoytgong@wharton.upenn.edu" target="_blank"><img src="https://seedlogix.com/hubs/themes/clients/images/google-white.svg">Email</a>
+
+       </div>
+
+
+       <div>
+        <p>&copy; Hoyt Gong 2019</p>
+       </div>
+    </footer>
+
+
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+    <!-- <script src="js/main.js"></script> -->
+    <script src="js/mousescroll.js"></script>
+    <script>
+
+        var retype = {
+           
+            retypePhrases: [
+                'n optimist.',
+                ' coffee enthusiast.',
+                ' photo hobbyist.',
+                ' minimalist.',
+            ],
+            index       : -1,
+            elem        : document.getElementById('retype'),
+            start       : function(){
+                var _this = this;
+                setTimeout( function(){
+                    _this.deleteLetter();
+                }, 1500 ); 
+            },
+            deleteRepeat: function(){
+                this.deleteLetter();
+            },
+            deleteLetter: function(){
+                var newWord = this.elem.innerHTML;
+                if( newWord.length > 0 ){
+                    newWord = newWord.substring(0, newWord.length - 1);
+                    var _this = this;
+                    setTimeout( function(){
+                        _this.elem.innerHTML = newWord;
+                        _this.deleteRepeat();
+                    }, 40 );
+                }else{
+                    this.newLetter();
+                }
+            },
+            newRepeat   : function(){
+                this.newLetter();
+            },
+            newLetter   : function(){
+                var newWord = this.elem.innerHTML;
+                if( newWord.length === 0 ){
+                    this.index++;
+                    if( this.index >= this.retypePhrases.length ){
+                        this.index = 0;
+                    }
+                }
+                var newLetters = this.retypePhrases[ this.index ];
+                if( newLetters.length > newWord.length ){
+                    newLetters = newLetters.substring(0, ( newWord.length + 1 ) );
+                    var _this = this;
+                    var time = Math.round( Math.random() * 100 ) + 100;
+                    setTimeout( function(){
+                        _this.elem.innerHTML = newLetters;
+                        _this.newLetter();
+                    }, time );
+                }else{
+                    this.start();
+                    
+                }
+            }
+        };
+
+        retype.start();
+    </script>
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>
