@@ -270,15 +270,10 @@ div#masonry:hover img:hover { opacity: 1; }
 /*----------------------------------------------*/
 /*-------------------ABOUT ME-------------------*/
 /*----------------------------------------------*/
-/*.content-container{
-  margin: 30px 45px 50px 45px;
-  display: block;
-  justify-content: center;
-}*/
 
 .about-page {
   padding-top: 60px;
-  padding-bottom: 80px;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: row;
   width: 70%;
@@ -305,6 +300,27 @@ div#masonry:hover img:hover { opacity: 1; }
   position: relative;
   display: flex;
   flex-wrap: wrap;
+}
+
+@media screen and (max-width: 768px) {
+  .about-page{
+    /*flex: 100%;*/
+    width: 100%;
+    flex-wrap: wrap;
+
+  }
+
+  .about-page img{
+    /*float: center !important;*/
+    margin-top: -6vh;
+    margin-bottom: 3%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-post-text {
+    margin-left: 6vw;
+    margin-right: 4vw;
 }
 
 
