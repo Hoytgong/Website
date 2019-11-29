@@ -92,9 +92,9 @@ p {
   padding-top: 60px;
 }
 
-html {
+/*html {
   scroll-behavior: smooth;
-}
+}*/
 
 .container a span {
   position: absolute;
